@@ -1,0 +1,19 @@
+{
+  "id": "1234",
+  "description": "Backfill load for tenant",
+  "type": "backfill",
+  "tenant": "tenant",
+  "backfillId": "5678",
+  "runRangeStartTime": "2023-01-01T00:00:00.000Z",
+  "runRangeEndTime": "2023-12-31T11:59:59.999Z",
+  "initialLoadElements": [
+    {
+      "resourceType": "Patient",
+      "id": "13579"
+    },
+    {
+      "resourceType": "Patient",
+      "id": "24680"
+    }
+  ]
+}

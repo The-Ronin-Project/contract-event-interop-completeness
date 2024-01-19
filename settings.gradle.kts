@@ -1,4 +1,4 @@
-rootProject.name = "ronin-contract-event-template"
+rootProject.name = "event-interop-completeness"
 
 pluginManagement {
     repositories {

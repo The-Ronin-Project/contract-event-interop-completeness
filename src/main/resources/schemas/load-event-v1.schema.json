@@ -1,0 +1,90 @@
+{
+  "$id": "https://github.com/projectronin/ronin-contract-interop-completeness/blob/main/src/main/resources/load-event-v1.schema.json",
+  "title": "Load Event",
+  "description": "Describes a load event that occurred as part of a run",
+  "type": "object",
+  "properties": {
+    "runId": {
+      "description": "The ID of the run for which the load occurred",
+      "type": "string"
+    },
+    "sourceResource": {
+      "$ref": "load-resource-v1.schema.json"
+    },
+    "result": {
+      "description": "The result of the load attempt",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "The result status",
+          "type": "string",
+          "enum": [
+            "success",
+            "failure",
+            "error",
+            "blocked"
+          ]
+        },
+        "message": {
+          "description": "Optional message containing further details about the result, such as an error message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "targetResourceType": {
+      "$ref": "resource-type.schema.json"
+    },
+    "successfulResources": {
+      "description": "List of the resources that were successfully loaded based off the source",
+      "type": "array",
+      "items": {
+        "description": "A successfully loaded resource. Its type will always be the targetResourceType",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The ID of the resource that was successfully loaded",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "failedResources": {
+      "description": "List of the resources that failed to be loaded based off the source. This will only be populated if the result status is failure.",
+      "type": "array",
+      "items": {
+        "description": "A failed resource. Its type will always be the targetResourceType",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The ID of the resource that failed loading",
+            "type": "string"
+          },
+          "reason": {
+            "description": "Freetext explaining the reason this resource failed",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "runId",
+    "sourceResource",
+    "result",
+    "targetResourceType"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "runId": "1234",
+  "sourceResource": {
+    "resourceType": "Patient",
+    "id": "123"
+  },
+  "result": {
+    "status": "failure"
+  },
+  "targetResourceType": "Appointment",
+  "successfulResources": [
+    {
+      "id": "13579"
+    }
+  ],
+  "failedResources": [
+    {
+      "id": "24680",
+      "reason": "Failed to transform"
+    }
+  ]
+}

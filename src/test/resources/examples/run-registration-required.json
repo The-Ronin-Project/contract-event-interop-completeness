@@ -1,0 +1,16 @@
+{
+  "id": "1234",
+  "description": "Nightly load for tenant",
+  "type": "nightly",
+  "tenant": "tenant",
+  "initialLoadElements": [
+    {
+      "resourceType": "Patient",
+      "id": "13579"
+    },
+    {
+      "resourceType": "Patient",
+      "id": "24680"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$id": "https://github.com/projectronin/ronin-contract-interop-completeness/blob/main/src/main/resources/load-resource-v1.schema.json",
+  "title": "Load Resource",
+  "description": "A resource that causes a load operation to occur. This could be the resource to be loaded or a resource for which other linked resources should be loaded.",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "$ref": "resource-type.schema.json"
+    },
+    "id": {
+      "description": "The ID of the resource that was requested to be loaded",
+      "type": "string"
+    }
+  },
+  "required": [
+    "resourceType",
+    "id"
+  ],
+  "additionalProperties": false
+}

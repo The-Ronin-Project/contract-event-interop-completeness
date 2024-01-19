@@ -1,0 +1,59 @@
+{
+  "$id": "https://github.com/projectronin/ronin-contract-interop-completeness/blob/main/src/main/resources/run-registration-v1.schema.json",
+  "title": "Run Registration",
+  "description": "Registers a run of the ingestion system",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier for this run",
+      "type": "string"
+    },
+    "description": {
+      "description": "Freetext description of the run",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of run being performed",
+      "type": "string",
+      "enum": [
+        "adhoc",
+        "nightly",
+        "backfill",
+        "realtime"
+      ]
+    },
+    "tenant": {
+      "description": "The tenant for which the run is being performed",
+      "type": "string"
+    },
+    "backfillId": {
+      "description": "The ID of the backfill associated to this run, if it is a backfill run",
+      "type": "string"
+    },
+    "runRangeStartTime": {
+      "description": "The nullable start date/time associated to the range for the run",
+      "type": "string",
+      "format": "date-time"
+    },
+    "runRangeEndTime": {
+      "description": "The nullable end date/time associated to the range for the run",
+      "type": "string",
+      "format": "date-time"
+    },
+    "initialLoadElements": {
+      "description": "The set of 1 or more elements that are processed as the initial loads for the run",
+      "type": "array",
+      "items": {
+        "$ref": "load-resource-v1.schema.json"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "description",
+    "type",
+    "tenant",
+    "initialLoadElements"
+  ],
+  "additionalProperties": false
+}

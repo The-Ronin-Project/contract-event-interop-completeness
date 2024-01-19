@@ -1,0 +1,24 @@
+{
+  "$id": "https://github.com/projectronin/ronin-contract-interop-completeness/blob/main/src/main/resources/dag-registration-v1.schema.json",
+  "title": "DAG Registration",
+  "description": "Registers a service or channel onto the DAG",
+  "type": "object",
+  "properties": {
+    "resource": {
+      "description": "The resource associated to the service or channel",
+      "$ref": "resource-type.schema.json"
+    },
+    "consumedResources": {
+      "description": "The List of resources that are consumed by this service or channel. If the channel only responses to load requests, an empty List should be provided.",
+      "type": "array",
+      "items": {
+        "$ref": "resource-type.schema.json"
+      }
+    }
+  },
+  "required": [
+    "resource",
+    "consumedResources"
+  ],
+  "additionalProperties": false
+}

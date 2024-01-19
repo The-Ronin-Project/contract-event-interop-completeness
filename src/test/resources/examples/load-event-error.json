@@ -1,0 +1,12 @@
+{
+  "runId": "1234",
+  "sourceResource": {
+    "resourceType": "Patient",
+    "id": "123"
+  },
+  "result": {
+    "status": "error",
+    "message": "500 error while loading resources"
+  },
+  "targetResourceType": "Appointment"
+}

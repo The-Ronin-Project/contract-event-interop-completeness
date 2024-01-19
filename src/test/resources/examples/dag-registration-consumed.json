@@ -1,0 +1,7 @@
+{
+  "resource": "Observation",
+  "consumedResources": [
+    "Patient",
+    "Condition"
+  ]
+}
