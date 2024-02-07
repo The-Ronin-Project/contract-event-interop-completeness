@@ -46,6 +46,13 @@
       "items": {
         "$ref": "load-resource-v1.schema.json"
       }
+    },
+    "targetedResources": {
+      "description": "List of the resources targeted by this run. If empty or not provided, it is assumed that all currently supported resources were included in the run",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [
